@@ -1,0 +1,36 @@
+# Python缓存/编译文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# 虚拟环境
+conda-meta/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 数据/日志/配置
+*.log
+*.err
+data/
+*.jsonl
+.env
+.secret
+*.pkl
+out/
+checkpoints/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDE配置（VS Code/PyCharm）
+.idea/
+.vscode/
+*.swp
+*.swo
