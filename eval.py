@@ -4,7 +4,7 @@ import warnings
 import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, TextStreamer
-from model.MokioModel import MokioMindConfig, MokioMindForCausalLM
+from model.myminimind import MokioMindConfig, MyMindForCausalLM
 from trainer.trainer_utils import setup_seed
 
 warnings.filterwarnings("ignore")
@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 def init_model(args):
     tokenizer = AutoTokenizer.from_pretrained(args.load_from)
     if "model" in args.load_from:
-        model = MokioMindForCausalLM(
+        model = MyMindForCausalLM(
             MokioMindConfig(
                 hidden_size=args.hidden_size,
                 num_hidden_layers=args.num_hidden_layers,
