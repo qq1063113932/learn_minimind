@@ -244,10 +244,10 @@ class Attention(nn.Module):
             # 因果掩码 下三角
             causal_mask = torch.triu(
                 torch.full((slen, slen), float("-inf"), device=scores.device),
-                diagonal=-1,
+                diagonal=1,
             )
 
-            scores=scores+causal_mask.unsqueeze(0).unsqueeze(0)
+            scores[:, :, :, -slen:] += causal_mask.unsqueeze(0).unsqueeze(0)
 
             # padding masks
             if attention_mask is not None:
